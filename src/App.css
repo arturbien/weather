@@ -231,15 +231,16 @@ body {
     
   }
   .details ul{
-    height: 50px;
-    flex-wrap: wrap;
+    height: auto;
     padding: 0;
-
+    display: block;
+    width: 100%;
     text-align: center;
   }
   .details ul li {
+    display: inline-block;
     width: 50%;
-    display: inline;
+    
   }
   .Forecast {
     flex-wrap: wrap;
