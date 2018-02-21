@@ -1,0 +1,279 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: #e2e1e0;
+  color: #fff;
+}
+
+.App {
+  width: 50%;
+  min-width: 330px;
+  max-width: 815px;
+  margin: 100px auto;
+
+  text-align: center;
+}
+
+.Loading {
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  position: fixed;
+  background: #FF4365;
+}
+.Loading h1 {
+  position: relative;
+  top:50%;
+  transform: translateY(-50%);
+  text-align: center;
+  font-weight: 100;
+  color: #fff;
+}
+.shadow {
+  box-shadow: 0 3px 6px rgba(0,0,0,0.20), 0 3px 6px rgba(0,0,0,0.35);
+}
+/*   SEARCH BAR   */
+
+.SearchBar {
+  width: 100%;
+  height: 3em;
+  margin-bottom: 1em;
+  display: flex;
+}
+
+.SearchBar input {
+  height: 100%;
+  flex: 5;
+
+  background: #fff;
+  outline: none;
+  border:none;
+  
+  color: #272727;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.SearchBar input::placeholder {
+  font-size: 0.6em;
+  font-weight: thin;
+}
+
+.SearchBar button {
+  height: 100%;
+  flex: 2;
+
+  outline: none;
+  border: none;
+  background: #17BEBB;
+
+  color: #fff;
+  font-size: 1.5em;
+  font-weight: 100;
+  
+  transition: 0.1s all;
+}
+
+.SearchBar button:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+/*   TODAY SECTION   */
+
+.Today {
+  width: 100%;
+  padding: 1em 0;
+  margin-bottom: 1em;
+  display: flex;
+
+  background: #FF4365;
+
+  font-weight: lighter;
+}
+
+.main {
+  height: 100px;
+  flex: 5;
+  display: flex;
+}
+
+.main .degrees {
+  flex: 3;
+}
+
+.degrees h1 {
+  font-size: 3.5em;
+  line-height: 100px;
+  font-weight: 100;
+}
+
+.main .symbol {
+  flex: 2;
+  border-left: 2px solid #fff;
+}
+
+.WeatherIcon img{
+  width: 100%;
+}
+
+.Today .WeatherIcon {
+  width: 50%;
+  margin: auto;
+
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+
+  filter: brightness(0) invert(1);
+}
+
+.details {
+  height: 100px;
+  flex: 2;
+  border-left: 2px solid #fff;
+}
+
+.details ul {
+  height: 100%;
+  padding-left: 2em;
+  display: flex;
+  flex-direction: column;
+
+  list-style: none;
+
+  text-align: left;
+  text-transform: uppercase;
+  
+}
+
+.details ul li {
+  flex: 1;
+}
+.details ul li:first-child {
+  font-weight: 400;
+}
+/*   FORECAST   */
+
+.Forecast {
+  display: flex;
+  padding: 1em 0;
+
+  background: #fff;
+
+  text-transform: uppercase;
+  color: #17BEBB;
+}
+
+.Day {
+  flex:1;
+  border-left: 2px solid #e2e1e0;
+}
+
+.Day:first-child {
+  border-left: none;
+
+  color: #FF4365;
+}
+
+.Forecast .WeatherIcon {
+  margin: auto;
+  width: 40%;
+  height: 50px;
+  padding-top: 10px;
+}
+
+/*  BREAKPOINTS   DESKTOP -> MOBILE   */
+
+@media screen and (max-width: 1300px) {
+  .App {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .App {
+    width: 85%;
+  }
+}
+
+@media screen and (max-width: 812px) {
+  .App {
+    width: 100%;
+  }
+  .App, .SearchBar, .Today, .Forecast {
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .Today {
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding-bottom: 0;
+  }
+  .Today .main .degrees, .Today .main .symbol {
+    flex:1;
+  }
+  .Today .WeatherIcon {
+    width:110px;
+  }
+  .details {
+    height: auto;
+    margin-top: 1em;
+    padding: 1em 0;
+    border: none;
+    
+    background: #17BEBB;
+    
+  }
+  .details ul{
+    height: 50px;
+    flex-wrap: wrap;
+    padding: 0;
+
+    text-align: center;
+  }
+  .details ul li {
+    width: 50%;
+    display: inline;
+  }
+  .Forecast {
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+}
+
+@media screen and (max-width: 450px) {
+
+  .Forecast {
+    flex-direction: column;
+    padding: 0 1em;
+  }
+  .Day {
+    height: 50px;
+    border: none;
+    border-bottom: 2px solid #e2e1e0;
+    display: flex;
+    align-items: center;
+    
+    text-align: center;
+  }
+  .Day:last-child{
+    border-bottom: none;
+  }
+  .Forecast .WeatherIcon {
+    height: 1.2em;
+    padding: 0;
+  }
+  .Forecast .WeatherIcon img{
+    height: 100%;
+  }
+  .Day p, .Day h3, .Day h4, .Day .WeatherIcon {
+    flex: 1;
+  }
+}
