@@ -11,7 +11,6 @@ body {
 
 .App {
   width: 50%;
-  min-width: 330px;
   max-width: 815px;
   margin: 100px auto;
 
@@ -187,35 +186,26 @@ body {
   padding-top: 10px;
 }
 
-/*  BREAKPOINTS  */
+/*  BREAKPOINTS   DESKTOP -> MOBILE   */
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 1300px) {
+  .App {
+    width: 70%;
+  }
+}
 
-  .Forecast {
-    flex-direction: column;
-    padding: 0 1em;
+@media screen and (max-width: 950px) {
+  .App {
+    width: 85%;
   }
-  .Day {
-    height: 50px;
-    border: none;
-    border-bottom: 2px solid #e2e1e0;
-    display: flex;
-    align-items: center;
-    
-    text-align: center;
+}
+
+@media screen and (max-width: 812px) {
+  .App {
+    width: 100%;
   }
-  .Day:last-child{
-    border-bottom: none;
-  }
-  .Forecast .WeatherIcon {
-    height: 1.2em;
-    padding: 0;
-  }
-  .Forecast .WeatherIcon img{
-    height: 100%;
-  }
-  .Day p, .Day h3, .Day h4, .Day .WeatherIcon {
-    flex: 1;
+  .App, .SearchBar, .Today, .Forecast {
+    margin: 0;
   }
 }
 
@@ -257,25 +247,32 @@ body {
   }
 }
 
+@media screen and (max-width: 450px) {
 
-@media screen and (max-width: 812px) {
-  .App {
-    width: 100%;
+  .Forecast {
+    flex-direction: column;
+    padding: 0 1em;
   }
-  .App, .SearchBar, .Today, .Forecast {
-    margin: 0;
+  .Day {
+    height: 50px;
+    border: none;
+    border-bottom: 2px solid #e2e1e0;
+    display: flex;
+    align-items: center;
+    
+    text-align: center;
   }
-}
-
-
-@media screen and (max-width: 950px) {
-  .App {
-    width: 85%;
+  .Day:last-child{
+    border-bottom: none;
   }
-}
-
-@media screen and (max-width: 1300px) {
-  .App {
-    width: 70%;
+  .Forecast .WeatherIcon {
+    height: 1.2em;
+    padding: 0;
+  }
+  .Forecast .WeatherIcon img{
+    height: 100%;
+  }
+  .Day p, .Day h3, .Day h4, .Day .WeatherIcon {
+    flex: 1;
   }
 }
